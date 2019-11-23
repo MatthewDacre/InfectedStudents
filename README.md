@@ -1,1 +1,3 @@
 # InfectedStudents
+
+An application of: "Students are sitting in an n × n grid. A sudden outbreak of beaver flu (a rare variant of bird flu that lasts forever; symptoms include yearning for problem sets and craving for ice cream study sessions) causes some students to get infected. Now the infection begins to spread every minute (in discrete time-steps). Two students are considered adjacent if they share an edge (i.e., front, back, left or right, but NOT diagonal); thus, each student is adjacent to 2,3, or 4 others. A student is infected in the next time step if either: the student was previously infected (since beaver flu lasts forever), or the student is adjacent to at least two already-infected students", where n = 5.
