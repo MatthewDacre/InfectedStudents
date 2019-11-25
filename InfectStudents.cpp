@@ -4,7 +4,6 @@
 using namespace std;
 void printGrid(vector<vector<int>> grid)
 {
-    //cout << " - - - - - " << endl;
     for(auto i : grid)
     {
         for(auto j : i)
@@ -12,7 +11,6 @@ void printGrid(vector<vector<int>> grid)
             cout<< "|" << j << "|";
         }
         cout << endl;
-        //cout<<" - - - - - " << endl;
     }
 }
 
@@ -128,31 +126,26 @@ bool totalInfect(vector<vector<int>> grid)
 int main() {
 
         vector<vector<int>> grid;
-        //Initialising a 5 by 5 grid of uninfected students. 0 = uninfected, 1 = infected
-    //        {{0,0,0,0,0},
-    //        {0,0,0,0,0},
-    //        {0,0,0,0,0},
-    //        {0,0,0,0,0},
-    //        {0,0,0,0,0}};
-        for(int row = 0; row < 5; row++)
+        int size;
+        cin>>size;
+        for(int row = 0; row < size; row++)
         {
-            vector<int>tempRow;
-           for(int col = 0; col < 5; col++)
+           vector<int>tempRow;
+           for(int col = 0; col < size; col++)
             {
                tempRow.push_back(0);
             }
            grid.push_back(tempRow);
         }
-        //Random number between 5 and 7 (inclusive) of infected students
-        int numInitInfect = 6;
-        //int numInitInfect = 15;
+        //Random number between size/4 and the full size
+        int numInitInfect = rand()%size + size/4;
         cout<<"<----------------------------------------------------------------------------->" << endl;
         cout << "Number of students infected initially: " <<numInitInfect << endl;
         //Initial Grid being set up
         for(int i = 0; i < numInitInfect; i++)
         {
-            int randRow = rand() % 5;
-            int randCol = rand() % 5;
+            int randRow = rand() % size;
+            int randCol = rand() % size;
             if(grid[randRow][randCol] == 1)
             {
                 i--;
